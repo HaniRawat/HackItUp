@@ -7,51 +7,57 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
+    <header class="header">
         <div class="container">
-            <h1>SkillSwap</h1>
-            <nav>
-                <ul>
-                    <li><a href="#user-profile-section">Create Profile</a></li>
-                    <li><a href="#search-section">Search Skills</a></li>
-                    <li><a href="#skill-listings">Available Skills</a></li>
+            <div class="logo">
+              
+                <h1 class="logo-text">SkillSwap</h1>
+            </div>
+            <nav class="navbar">
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="#user-profile-section" class="nav-link">Create Profile</a></li>
+                    <li class="nav-item"><a href="#search-section" class="nav-link">Search Skills</a></li>
+                    <li class="nav-item"><a href="#skill-listings" class="nav-link">Available Skills</a></li>
                 </ul>
             </nav>
         </div>
-        
     </header>
-    <main>
-        <section id="user-profile-section">
+    <main class="main-content">
+        <section id="user-profile-section" class="section">
             <h2>Create Your Profile</h2>
             <form id="user-profile-form">
                 <label for="username">Username:</label>
                 <input type="text" id="username" name="username" required><br>
-                <label for="skills">Skills (comma-separated):</label>
-                <input type="text" id="skills" name="skills" required><br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br>
+                <label for="location">Location:</label>
+                <input type="text" id="location" name="location"><br>
+                <label for="bio">Bio:</label>
+                <textarea id="bio" name="bio"></textarea><br>
                 <button type="submit">Create Profile</button>
             </form>
         </section>
-        <section id="search-section">
+        <section id="search-section" class="section">
             <h2>Search for Skills</h2>
             <input type="text" id="search-input" placeholder="Search for skills...">
         </section>
-        <section id="skill-details">
+        <section id="skill-details" class="section">
             <h2>Skill Details</h2>
             <div id="skill-details-content"></div>
         </section>
-        <section id="skill-listings">
+        <section id="skill-listings" class="section">
             <h2>Available Skills</h2>
-            <button onclick="addNewSkill()">Add New Skill</button>
-            <button onclick="filterSkillsByUser()">Filter by User</button>
-            <button onclick="sortSkills()">Sort Alphabetically</button>
             <!-- Skills will be dynamically generated here -->
         </section>
     </main>
-    <footer>
-        <p>&copy; 2024 SkillSwap</p>
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 SkillSwap</p>
+        </div>
     </footer>
     <script src="script.js"></script>
 </body>
 </html>
+
 
 

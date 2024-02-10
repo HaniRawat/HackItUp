@@ -1,73 +1,94 @@
-*{
+/* Reset and base styles */
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     background-color: #f8f8f8;
+    color: #333;
 }
-/* Styles for the header */
-header {
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header styles */
+.header {
     background-color: #4CAF50;
     color: white;
     padding: 20px 0;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-.container {
+
+.logo {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
 }
-nav ul {
-    list-style: none;
-    padding: 0;
+
+
+
+.logo-text {
+    font-family: 'Arial', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
     margin: 0;
 }
 
-nav ul li {
-    display: inline-block;
+.navbar {
+    display: flex;
+    align-items: center;
+}
+
+.nav-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.nav-item {
     margin-right: 20px;
 }
-nav ul li a {
+
+.nav-link {
     color: white;
     text-decoration: none;
-    font-size: 18px;
     font-family: 'Arial', sans-serif;
+    font-size: 18px;
+    transition: all 0.3s ease;
 }
 
-nav ul li a:hover {
-    text-decoration: underline;
+.nav-link:hover {
+    color: #f0f0f0;
 }
 
-/* Styles for the main content */
-main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+/* Main content styles */
+.main-content {
+    padding: 20px 0;
+}
+
+.section {
+    margin-bottom: 40px;
     padding: 20px;
-    background-image: url("background.jpg");
-}
-
-/* Styles for user profile section */
-#user-profile-section {
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    padding: 20px;
+    background-color: #fff;
     border-radius: 5px;
-    background-color: #f9f9f9;
-    max-width: 400px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Styles for form elements */
+.section h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Form styles */
 form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     max-width: 600px;
     margin: 0 auto;
 }
@@ -76,125 +97,81 @@ label {
     display: block;
     margin-bottom: 8px;
     font-weight: bold;
+    color: #555;
 }
 
-input[type="text"],input[type="submit"] {
+input[type="text"],
+input[type="email"],
+textarea,
+input[type="submit"] {
     width: 100%;
     padding: 10px;
     margin-bottom: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    font-size: 16px;
 }
+
 input[type="submit"] {
     background-color: #4CAF50;
     color: white;
     border: none;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 input[type="submit"]:hover {
     background-color: #45a049;
 }
-button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+
+/* Skill listing styles */
+.skill-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
 }
 
-button:hover {
-    background-color: #45a049;
-}
-.section {
-    margin-bottom: 40px;
+.skill {
     padding: 20px;
-    background-color: #fff;
+    background-color: #f9f9f9;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-.section h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
-}
 
-/* Styles for skill listings */
-#skill-listings {
-    max-width: 600px;
-}
-
-#skill-listings h2 {
+.skill h3 {
+    font-size: 20px;
     margin-bottom: 10px;
+    color: #333;
 }
 
-/* Styles for the footer */
-footer {
-    background-color: #4CAF50;
+.skill p {
+    margin-bottom: 10px;
+    color: #555;
+}
+
+/* Footer styles */
+.footer {
+    background-color: #333;
     color: white;
+    padding: 20px 0;
     text-align: center;
-    padding: 10px;
-   
-    bottom: 0;
-    width: 100%;
-}
-/* Styles for the search section */
-#search-section {
-    margin-bottom: 20px;
-    max-width: 600px;
 }
 
-#search-input {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
+/* Responsive styles */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 10px;
+    }
 
-/* Styles for skill details */
-#skill-details {
-    margin-bottom: 20px;
-}
+    .nav-menu {
+        flex-wrap: wrap;
+    }
 
-#skill-details-content {
-    max-width: 600px;
-    border: 1px solid #ccc;
-    padding: 20px;
-    border-radius: 5px;
-    background-color: #f9f9f9;
-}
+    .nav-item {
+        margin-right: 10px;
+    }
 
-/* Styles for skill listings */
-#skill-listings {
-    max-width: 600px;
-}
-
-/* Styles for edit, delete, and sort buttons */
-button.add-button, button.filter-button, button.user-count-button {
-    background-color: #f44336;
-    color: white;
-    padding: 5px 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-right: 5px;
-}
-
-button.add-button:hover, button.filter-button:hover, button.user-count-button:hover {
-    background-color: #d32f2f;
-}
-/* Styles for sort button */
-button.sort-button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 5px 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-bottom: 10px;
-}
-
-button.sort-button:hover {
-    background-color: #45a049;
+    .skill-list {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
 }
