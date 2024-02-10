@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillSwap - Home</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to SkillSwap</h1>
+    </header>
+    <main>
+        <section id="user-profile-section">
+            <h2>Create Your Profile</h2>
+            <form id="user-profile-form">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required><br>
+                <label for="skills">Skills (comma-separated):</label>
+                <input type="text" id="skills" name="skills" required><br>
+                <button type="submit">Create Profile</button>
+            </form>
+        </section>
+        <section id="skill-listings">
+            <h2>Available Skills</h2>
+            <!-- Skills will be dynamically generated here -->
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 SkillSwap</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
+
