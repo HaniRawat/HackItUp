@@ -1,11 +1,51 @@
 // Mock data for skill listings and user profiles
 let skills = [
-    { id: 1, name: 'Web Development', user: 'User1' },
-    { id: 2, name: 'Graphic Design', user: 'User2' }
+    { id: 1, name: 'Web Development', user: 'User1', description: 'HTML, CSS, JavaScript' },
+    { id: 2, name: 'Graphic Design', user: 'User2', description: 'Adobe Photoshop, Illustrator' }
     // Add more skills as needed
 ];
 
 let users = [];
+
+// Function to add new skill
+function addNewSkill() {
+    const skillName = prompt('Enter the name of the new skill:');
+    if (skillName) {
+        const skill = {
+            id: skills.length + 1,
+            name: skillName,
+            user: 'Your username', // Set the user dynamically based on logged-in user
+            description: '' // Add an empty description initially
+        };
+        skills.push(skill);
+        displaySkills();
+    }
+}
+
+// Function to filter skills by user
+function filterSkillsByUser() {
+    const user = prompt('Enter username to filter skills:');
+    if (user) {
+        const filteredSkills = skills.filter(skill => skill.user === user);
+        if (filteredSkills.length > 0) {
+            const skillListings = document.getElementById('skill-listings');
+            skillListings.innerHTML = '';
+            filteredSkills.forEach(skill => {
+                const skillElement = document.createElement('div');
+                skillElement.innerHTML = `<p>${skill.name} - Offered by ${skill.user}</p>`;
+                skillListings.appendChild(skillElement);
+            });
+        } else {
+            alert('No skills found for the specified user.');
+        }
+    }
+}
+
+// Function to sort skills alphabetically
+function sortSkills() {
+    skills.sort((a, b) => a.name.localeCompare(b.name));
+    displaySkills();
+}
 
 // Function to display skill listings
 function displaySkills() {
@@ -50,6 +90,30 @@ function handleFormSubmission(event) {
     }
 }
 
+// Function to show detailed skill information
+function showSkillDetails(skillId) {
+    const skillDetailsContent = document.getElementById('skill-details-content');
+    const skill = skills.find(skill => skill.id === skillId);
+    if (skill) {
+        skillDetailsContent.innerHTML = `<h3>${skill.name}</h3><p>Offered by ${skill.user}</p><p>Description: ${skill.description}</p>`;
+    } else {
+        skillDetailsContent.innerHTML = 'Skill not found.';
+    }
+}
+
+// Function to handle search for skills
+function handleSkillSearch() {
+    const searchInput = document.getElementById('search-input').value.toLowerCase();
+    const filteredSkills = skills.filter(skill => skill.name.toLowerCase().includes(searchInput));
+    const skillListings = document.getElementById('skill-listings');
+    skillListings.innerHTML = '';
+    filteredSkills.forEach(skill => {
+        const skillElement = document.createElement('div');
+        skillElement.innerHTML = `<p>${skill.name} - Offered by ${skill.user}</p>`;
+        skillListings.appendChild(skillElement);
+    });
+}
+
 // Display initial data
 displaySkills();
 
@@ -57,3 +121,6 @@ displaySkills();
 const userProfileForm = document.getElementById('user-profile-form');
 userProfileForm.addEventListener('submit', handleFormSubmission);
 
+// Add event listener for skill search
+const searchInput = document.getElementById('search-input');
+searchInput.addEventListener('input', handleSkillSearch);

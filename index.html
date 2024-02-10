@@ -8,7 +8,17 @@
 </head>
 <body>
     <header>
-        <h1>Welcome to SkillSwap</h1>
+        <div class="container">
+            <h1>SkillSwap</h1>
+            <nav>
+                <ul>
+                    <li><a href="#user-profile-section">Create Profile</a></li>
+                    <li><a href="#search-section">Search Skills</a></li>
+                    <li><a href="#skill-listings">Available Skills</a></li>
+                </ul>
+            </nav>
+        </div>
+        
     </header>
     <main>
         <section id="user-profile-section">
@@ -21,8 +31,19 @@
                 <button type="submit">Create Profile</button>
             </form>
         </section>
+        <section id="search-section">
+            <h2>Search for Skills</h2>
+            <input type="text" id="search-input" placeholder="Search for skills...">
+        </section>
+        <section id="skill-details">
+            <h2>Skill Details</h2>
+            <div id="skill-details-content"></div>
+        </section>
         <section id="skill-listings">
             <h2>Available Skills</h2>
+            <button onclick="addNewSkill()">Add New Skill</button>
+            <button onclick="filterSkillsByUser()">Filter by User</button>
+            <button onclick="sortSkills()">Sort Alphabetically</button>
             <!-- Skills will be dynamically generated here -->
         </section>
     </main>
@@ -32,4 +53,5 @@
     <script src="script.js"></script>
 </body>
 </html>
+
 
