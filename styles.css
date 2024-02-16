@@ -107,6 +107,7 @@ label {
 form button{
     
     display: inline-block;
+    
     outline: none;
     cursor: pointer;
     font-size: 14px;
@@ -129,16 +130,10 @@ form button{
         background-color: #1db954;
     }
 
+    .submit{
+        color: white;
+    }
 }
-/* form button:hover{
-    cursor: pointer;
-
-} */
-form button:active{
-    background-color: ;
-    
-}
-
 input[type="text"],
 input[type="email"],
 textarea,

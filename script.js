@@ -44,3 +44,8 @@ function handleFormSubmission(event) {
 // Add event listener for form submission
 const userProfileForm = document.getElementById('user-profile-form');
 userProfileForm.addEventListener('submit', handleFormSubmission);
+function redirectToExternalSite() {
+    // Redirect to another website
+    window.location.href = 'index2.html'; // Replace 'https://www.example.com' with the URL you want to redirect to
+    return false; // Prevent default form submission
+}
